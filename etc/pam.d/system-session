@@ -1,0 +1,7 @@
+session required pam_unix.so
+session required pam_loginuid.so
+session required pam_systemd.so
+
+# NEW USERSPACES IN SECURE ZRAM
+# For : zram-userguard-liberator :
+session optional pam_exec.so /usr/bin/zram-authentication-setup $PAM_USER
